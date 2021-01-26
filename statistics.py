@@ -1,3 +1,5 @@
+#Author: Ravi Kudumu
+#TCQ Foundation
 import math
 def calculateStats(numbers):
     computedStats = {}
