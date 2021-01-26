@@ -10,3 +10,25 @@ def calculateStats(numbers):
         computedStats["max"] = max(numbers)
         computedStats["avg"] = sum(numbers)/len(numbers)
     return computedStats
+
+class EmailAlert:
+    emailSent = False
+class LEDAlert:
+    ledGlows = False
+class StatsAlerter:
+    def __init__(self, maxThreshold, alert):
+        self.maxThreshold = maxThreshold
+        self.alert = alert
+    def checkAndAlert(self, values):
+        for i in values:
+            if i >= self.maxThreshold:
+                self.alert[0].emailSent = True
+                self.alert[1].ledGlows = True
+                break
+emailAlert = EmailAlert()
+ledAlert = LEDAlert()
+maxThreshold = 10.5
+statsAlerter = StatsAlerter(maxThreshold, [emailAlert, ledAlert])
+statsAlerter.checkAndAlert([22.6, 12.5, 3.7])
+print(ledAlert.ledGlows)
+print(emailAlert.emailSent)
