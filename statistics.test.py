@@ -1,3 +1,6 @@
+#Author: Ravi Kudumu
+#TCQ Foundation
+
 import unittest
 import statistics
 import math
